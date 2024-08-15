@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --bg-color: hsl(0, 0%, 90%);
+    --text-color: hsl(240, 6%, 21%);
+    --controls-music-bg: hsl(240, 9%, 89%);
+    --controls-music-activated: hsl(194, 97%, 31%);
+    --icon-color-default: black;
+    --icon-color-hover: white;
+    font-size: clamp(40%, 1% + 2vh, 62.5%);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19.2rem;
+    min-height: 100vh;
+    margin: auto; 
+}
+
+#Timer {
+    font-size: 12.6rem;
+    font-weight: 700;
+    display: flex;
+}
+
+#controls-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4.8rem;
+    gap: 4rem;
+}
+
+#controls-main button {
+    background: none;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#controls-main img {
+    width: 4.8rem;
+    height: 4.8rem;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#controls-musics {
+    width: 30.8rem;
+    height: 33.6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+}
+
+#controls-musics button {
+    background-color: var(--controls-music-bg);
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.3s ease;
+}
+
+#controls-musics img {
+    width: 4.4rem;
+    height: 5.6rem;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#controls-musics button:hover,
+#controls-musics button.selected {
+    background-color: var(--controls-music-activated);
+}
+
+#controls-musics button:hover img,
+#controls-musics button.selected img {
+    animation: colorChange 0.3s ease forwards, scaleUp 0.3s ease forwards;
+}
+
+#controls-main button:hover img {
+    animation: colorChange 0.3s ease forwards, scaleUp 0.3s ease forwards;
+}
+
+#controls-main button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes colorChange {
+    from {
+        filter: brightness(0) invert(0);
+    }
+    to {
+        filter: brightness(0) invert(1);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}

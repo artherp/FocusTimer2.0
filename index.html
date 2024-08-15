@@ -4,6 +4,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <link rel="icon" href="data:,">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus Timer</title>
@@ -11,9 +13,9 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
-    <script type="module" src="./source/main.js" defer></script>
+    <script type="module" src="./src/main.js" defer></script>
 </head>
-<body>
+<body class="">
     <div id="app">
         
         <div class="left-section">
@@ -27,40 +29,44 @@
                 <button id="play" data-action="toggleRunning">
                     <img src="./assets/play.svg" alt="play">
                 </button>
-
+            
                 <button id="pause" data-action="toggleRunning">
-                    <img src="./assets/stop.svg" alt="pause">
+                    <img src="./assets/stop-right.svg" alt="pause">
                 </button>
-
+            
+                <button id="reset" data-action="reset">
+                    <img src="./assets/stop.svg" alt="reset">
+                </button>
+            
                 <button id="add" data-action="add">
                     <img src="./assets/+.svg" alt="adicionar 5 minutos">
                 </button>
-
+            
                 <button id="subtract" data-action="subtract">
                     <img src="./assets/-.svg" alt="subtrair 5 minutos">
                 </button>
             </section>
+            
         </div>
 
-        <div class="right-section">
-            <section id="controls-musics">
-                <button id="forest-sound-btn" data-action="forest">
-                    <img src="./assets/tree.svg" alt="som de floresta">
-                </button>
-
-                <button id="rain-sound-btn" data-action="rain">
-                    <img src="./assets/cloud.svg" alt="som de floresta">
-                </button>
-
-                <button id="house-sound-btn" data-action="house">
-                    <img src="./assets/house.svg" alt="som ambiente">
-                </button>
-
-                <button id="fire-sound-btn" data-action="fire">
-                    <img src="./assets/fire.svg" alt="som ambiente">
-                </button>
-            </section>
-        </div>
+        <section id="controls-musics" class="music-controls">
+            <button id="forest-sound-btn" data-sound-id="forest">
+                <img src="./assets/tree.svg" alt="som de floresta">
+            </button>
+            
+            <button id="rain-sound-btn" data-sound-id="rain">
+                <img src="./assets/cloud.svg" alt="som de floresta">
+            </button>
+            
+            <button id="house-sound-btn" data-sound-id="coffee">
+                <img src="./assets/house.svg" alt="som ambiente">
+            </button>
+            
+            <button id="fire-sound-btn" data-sound-id="fireplace">
+                <img src="./assets/fire.svg" alt="som ambiente">
+            </button>
+        </section>
+ 
 
     </div>
 </body>

@@ -31,6 +31,7 @@ body {
     margin: auto; 
 }
 
+
 #Timer {
     font-size: 12.6rem;
     font-weight: 700;
@@ -51,6 +52,22 @@ body {
     margin: 0;
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+#play {
+    display: block;
+}
+
+#pause {
+    display: none;
+}
+
+body.running #play {
+    display: none;
+}
+
+body.running #pause {
+    display: block;
 }
 
 #controls-main img {
